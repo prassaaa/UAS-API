@@ -13,12 +13,24 @@ app.use(bodyParser.json());
 
 // import route posts pembayaran
 const postsRouter = require('./routes/posts');
-app.use('/pembayaran/posts', postsRouter); // use route posts di Express
+app.use('/pembayaran/posts', postsRouter);
 
 // import route posts bendahara
 const postsBendaharaRouter = require('./routes/posts-bendahara');
-app.use('/bendahara/posts', postsBendaharaRouter); // use route posts bendahara di Express
+app.use('/bendahara/posts', postsBendaharaRouter);
+
+// import route posts siswa
+const postsSiswaRouter = require('./routes/posts-siswa');
+app.use('/siswa/posts', postsSiswaRouter);
+
+// import route wali murid siswa
+const postsWaliRouter = require('./routes/posts-walimurid');
+app.use('/walimurid/posts', postsWaliRouter);
+
+// import route kepala sekolah siswa
+const postsKepalaSekolahRouter = require('./routes/posts-kepalasekolah');
+app.use('/kepalasekolah/posts', postsKepalaSekolahRouter);
 
 app.listen(port, () => {
-  console.log(`app running at http://localhost:${port}`);
+  console.log(`App running at http://localhost:${port}`);
 });
